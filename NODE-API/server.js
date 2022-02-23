@@ -19,6 +19,8 @@ mongoose.connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
 }).then(()=> {
     console.log('MongoDB is Connected')
+}).catch((err)=> {
+    console.log(`Error Connecting to DB: ${err}`)
 })
 
 // MIDDLEWARE
