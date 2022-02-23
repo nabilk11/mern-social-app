@@ -5,7 +5,7 @@ const User = require('../models/User');
 
 // UPDATE USER
 router.put("/:id", async (req, res) => {
-    if (req.body.userId === req.params.id || req.user.isAdmin) {
+    if (req.body.userId === req.params.id || req.body.isAdmin) {
 
         if (req.body.password) {
             try {
@@ -28,7 +28,24 @@ router.put("/:id", async (req, res) => {
         return res.status(403).json("You can only update your own account!")
     }
 })
+
+
 // DELETE USER
+router.delete("/:id", async (req, res) => {
+    if (req.body.userId === req.params.id || req.body.isAdmin) {
+
+        try {
+            const user = await User.findByIdAndDelete(req.params.id)
+            res.status(200).json("Account has been deleted!")
+        } catch (error) {
+            return res.status(500).json(err)
+        }
+
+    } else {
+        return res.status(403).json("You can only delete your own account!")
+    }
+})
+
 
 // GET A USER
 
