@@ -12,6 +12,7 @@ const PORT = 8000;
 // INTERNAL ROUTES
 const userRoute = require('./routes/users');
 const authRoute = require('./routes/auth');
+const postRoute = require('./routes/posts');
 
 // MONGO DB CONNECTION
 mongoose.connect(process.env.MONGO_URL, {
@@ -28,7 +29,7 @@ app.use(morgan('common'))
 // ROUTERS
 app.use('/api/users', userRoute)
 app.use('/api/auth', authRoute)
-
+app.use('/api/posts', postRoute)
 
 // LISTENER
 app.listen(PORT, () => {
