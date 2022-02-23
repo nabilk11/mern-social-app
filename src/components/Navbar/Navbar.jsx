@@ -10,7 +10,7 @@ export default function Navbar() {
         </div>
         <div className="navbarCenter">
             <div className="searchbar">
-            <Search />
+            <Search className='searchIcon'/>
             <input placeholder='Search...' className="searchInput" />
             </div>
         </div>
@@ -33,6 +33,7 @@ export default function Navbar() {
                   <span className="navbarIconBadge">1</span> 
                 </div>
             </div>
+            <img className='navbarImg' src="/assets/rihanna_pf.jpeg" alt="" />
         </div>
     </div>
   )
