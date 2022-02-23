@@ -48,7 +48,18 @@ router.delete("/:id", async (req, res) => {
 
 
 // GET A USER
+router.get("/:id", async (req, res) => {
+    try {
+        const user = await User.findById(req.params.id);
+        // to send less properties - use line below and replace .json(user) w/,json(other)
+        const { password, updatedAt, ...other} = user._doc
+        res.status(200).json(other)
+        
+    } catch (err) {
+        res.status(500).json(err)
+    }
 
+})
 // FOLLOW A USER
 
 // UNFOLLOW A USER
