@@ -1,5 +1,7 @@
 import React from 'react';
 import './rightbar.css';
+import { Users } from '../../data/dummy_data';
+import OnlineFriends from '../onlineFriends/OnlineFriends';
 
 export default function Rightbar() {
   return (
@@ -14,27 +16,9 @@ export default function Rightbar() {
         <img className="rightbarAd"src="/assets/ui/delta_ad.png" alt="" />
       <h4 className="rightbarTitle">Online Friends</h4>
       <ul className="rightbarFriendList">
-        <li className="rightbarFriend">
-          <div className="rightbarProfileImgContainer">
-            <img src="/assets/lebron_pf.png" alt="" className="rightbarProfileImg" />
-            <span className="rightbarOnline"></span>
-          </div>
-          <span className="rightbarUsername">Lebron James</span>
-        </li>
-        <li className="rightbarFriend">
-          <div className="rightbarProfileImgContainer">
-            <img src="/assets/lebron_pf.png" alt="" className="rightbarProfileImg" />
-            <span className="rightbarOnline"></span>
-          </div>
-          <span className="rightbarUsername">Lebron James</span>
-        </li>
-        <li className="rightbarFriend">
-          <div className="rightbarProfileImgContainer">
-            <img src="/assets/lebron_pf.png" alt="" className="rightbarProfileImg" />
-            <span className="rightbarOnline"></span>
-          </div>
-          <span className="rightbarUsername">Lebron James</span>
-        </li>
+        {Users.map((u) => (
+          <OnlineFriends user={u} key={u.id}/>
+        ))}
       </ul>
       </div>        
   </div>

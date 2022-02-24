@@ -1,6 +1,10 @@
-import { Bookmark, Chat, Event, Group, HelpOutline, PlayCircleFilled, RssFeed, School, WorkOutline } from '@material-ui/icons';
+import { Bookmark, Chat, Event, 
+    Group, HelpOutline, PlayCircleFilled, 
+    RssFeed, School, WorkOutline } from '@material-ui/icons';
 import React from 'react';
 import './leftbar.css';
+import { Users } from '../../data/dummy_data';
+import CloseFriends from '../closeFriends/CloseFriends';
 
 export default function Leftbar() {
   return (
@@ -47,34 +51,10 @@ export default function Leftbar() {
             <button className="leftbarButton">Show More</button>
             <hr className='leftbarHr'/>
             <ul className='leftbarFriendList'>
-            <li className="leftbarFriend">
-                    <img src="/assets/rihanna_pf.jpeg" alt="" className="leftbarFriendImg" />
-                    <span className="leftbarFriendName">Robin Fenty</span>
-                </li>
-                <li className="leftbarFriend">
-                    <img src="/assets/bellah_pf.jpeg" alt="" className="leftbarFriendImg" />
-                    <span className="leftbarFriendName">Bella Hadid</span>
-                </li>
-                <li className="leftbarFriend">
-                    <img src="/assets/lebron_pf.png" alt="" className="leftbarFriendImg" />
-                    <span className="leftbarFriendName">Lebron James</span>
-                </li>
-                <li className="leftbarFriend">
-                    <img src="/assets/iggyaz_pf.jpeg" alt="" className="leftbarFriendImg" />
-                    <span className="leftbarFriendName">Iggy Azalea</span>
-                </li>
-                <li className="leftbarFriend">
-                    <img src="/assets/tonstark_pf.webp" alt="" className="leftbarFriendImg" />
-                    <span className="leftbarFriendName">Tony Stark</span>
-                </li>
-                <li className="leftbarFriend">
-                    <img src="/assets/samhar_pf.jpg" alt="" className="leftbarFriendImg" />
-                    <span className="leftbarFriendName">Sam Harris</span>
-                </li>
-                <li className="leftbarFriend">
-                    <img src="/assets/pikachu_pf.jpeg" alt="" className="leftbarFriendImg" />
-                    <span className="leftbarFriendName">Pikachu</span>
-                </li>
+                {Users.map(u=> (
+                    <CloseFriends user={u} key={u.id} />
+                ))}
+                
             </ul>
         </div>
         
