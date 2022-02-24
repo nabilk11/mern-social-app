@@ -47,6 +47,14 @@ list-style: none;
     border-radius: 5px;
     font-weight: 500;
     cursor: pointer;
+    background-color: rgb(185, 189, 188);
+    margin-right: 20px;
+}
+
+.leftbarButton:hover {
+    background-color:crimson;
+    color: white;
+    transform: scale(1.08);
 }
 
 .leftbarHr {

@@ -6,7 +6,7 @@ export default function Navbar() {
   return (
     <div className='navbarContainer'>
         <div className="navbarLeft">
-            <span className="logo">nabBook</span>
+            <span className="logo">nabBook.</span>
         </div>
         <div className="navbarCenter">
             <div className="searchbar">
