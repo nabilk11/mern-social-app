@@ -7,6 +7,7 @@ import Rightbar from '../../components/rightbar/Rightbar';
 import './profile.css';
 
 export default function Profile() {
+  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   return (
     <div>
         <Navbar />
@@ -16,10 +17,10 @@ export default function Profile() {
           <div className="profileRightTop">
             <div className="profileCover">
             <img className="profileCoverImg" 
-            src="/assets/post/8.jpeg" 
+            src={`${PF}post/8.jpeg`}
             alt="" />
             <img className="profileUserImg" 
-            src="/assets/drake_pf.jpeg" 
+            src={`${PF}drake_pf.jpeg`}
             alt="" />
             </div>
             <div className="profileInfo">

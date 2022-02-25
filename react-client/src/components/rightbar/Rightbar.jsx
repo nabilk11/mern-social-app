@@ -4,17 +4,17 @@ import { Users } from '../../data/dummy_data';
 import OnlineFriends from '../onlineFriends/OnlineFriends';
 
 export default function Rightbar({ profile }) {
-
+  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   const HomeRightbar = () => {
     return (
       <>
       <div className="birthdayContainer">
-          <img className="birthdayImg" src="/assets/ui/bday.png" alt="" />
+          <img className="birthdayImg" src={`${PF}ui/bday.png`} alt="" />
           <span className="birthdayText">
             <b>Afsana Miji</b> and <b> 2 other friends</b> have a birthday today!
           </span>
         </div>
-        <img className="rightbarAd"src="/assets/ui/delta_ad.png" alt="" />
+        <img className="rightbarAd" src={`${PF}ui/delta_ad.png`} alt="" />
       <h4 className="rightbarTitle">Online Friends</h4>
       <ul className="rightbarFriendList">
         {Users.map((u) => (
@@ -45,19 +45,19 @@ export default function Rightbar({ profile }) {
       <h4 className="rightbarTitle">User Friends</h4>
       <div className="rightbarFollowings">
       <div className="rightbarFollowing">
-        <img src="/assets/bellah_pf.jpeg" alt="" className="rightbarFollowingImg" />
+        <img src={`${PF}bellah_pf.jpeg`} alt="" className="rightbarFollowingImg" />
         <span className="rightbarFollowingName">Bella Hadid</span>
       </div>
       <div className="rightbarFollowing">
-        <img src="/assets/lebron_pf.png" alt="" className="rightbarFollowingImg" />
+        <img src={`${PF}lebron_pf.png`} alt="" className="rightbarFollowingImg" />
         <span className="rightbarFollowingName">Lebron James</span>
       </div>
       <div className="rightbarFollowing">
-        <img src="/assets/samhar_pf.jpg" alt="" className="rightbarFollowingImg" />
+        <img src={`${PF}samhar_pf.jpg`} alt="" className="rightbarFollowingImg" />
         <span className="rightbarFollowingName">Sam Harris</span>
       </div>
       <div className="rightbarFollowing">
-        <img src="/assets/tonstark_pf.webp" alt="" className="rightbarFollowingImg" />
+        <img src={`${PF}tonstark_pf.webp`} alt="" className="rightbarFollowingImg" />
         <span className="rightbarFollowingName">Tony Stark</span>
       </div>
       </div>

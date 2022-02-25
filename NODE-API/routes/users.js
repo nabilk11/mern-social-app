@@ -1,4 +1,4 @@
-const router = require('../../react-client/node_modules/@types/express').Router();
+const router = require('express').Router();
 const bcrypt= require('bcrypt');
 const User = require('../models/User');
 
