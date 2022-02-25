@@ -1,3 +1,20 @@
+# MERN Social Media Application
+Facebook-inspired social media application created using the MERN stack - MongoDB, Express, React, & Node.
+
+# Modules
+## React Client
+- Timeago.js
+- Axios
+- MaterialUI Icons
+
+## Node API
+- Express
+- Helmet
+- Morgan
+- Mongoose
+- Bcrypt
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

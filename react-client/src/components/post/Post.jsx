@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import './post.css';
 import { Users } from '../../data/dummy_data';
 import axios from 'axios';
+import { format } from 'timeago.js'
 
 export default function Post({ post }) {
 
@@ -19,7 +20,7 @@ useEffect(() => {
       setUser(res.data)
     }
     fetchUser();
-  }, [])
+  }, [post.userId])
 
     // likeHandler 
     const likeHandler = () => {
@@ -37,7 +38,7 @@ useEffect(() => {
                     <span className="postUsername">
                         {user.username}
                     </span>
-                    <span className="postDate">{post.date}</span>
+                    <span className="postDate">{format(post.createdAt)}</span>
 
                 </div>
                 <div className="postTopRight">
