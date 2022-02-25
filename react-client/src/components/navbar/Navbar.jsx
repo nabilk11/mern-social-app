@@ -1,12 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './navbar.css';
-import { Chat, Notifications, Person, Search } from '@material-ui/icons'
+import { Chat, Notifications, Person, Search } from '@material-ui/icons';
 
 export default function Navbar() {
   return (
     <div className='navbarContainer'>
         <div className="navbarLeft">
+          <Link to={"/"} style={{textDecoration: 'none'}} >
             <span className="logo">nabBook.</span>
+            </Link>
         </div>
         <div className="navbarCenter">
             <div className="searchbar">
@@ -16,7 +19,9 @@ export default function Navbar() {
         </div>
         <div className="navbarRight">
             <div className="navbarLinks">
+              <Link to={"/"} style={{textDecoration: 'none', color: 'white'}} >
                 <span className="navbarLink">Home</span>
+              </Link>
                 <span className="navbarLink">Timeline</span>
             </div>
             <div className="navbarIcons">
