@@ -4,6 +4,7 @@ import './post.css';
 import { Users } from '../../data/dummy_data';
 import axios from 'axios';
 import { format } from 'timeago.js'
+import { Link } from 'react-router-dom';
 
 export default function Post({ post }) {
 
@@ -33,11 +34,15 @@ useEffect(() => {
         <div className="postWrapper">
             <div className="postTop">
                 <div className="postTopLeft">
+                    <Link to={`/profile/${user.username}`} >
                     <img className='postProfileImg' 
                     src={user.profilePicture || PF+"blank_pf.jpeg"} alt="" />
+                    </Link>
+                    <Link to={`/profile/${user.username}`} style={{textDecoration: 'none', color: 'black' }}>
                     <span className="postUsername">
                         {user.username}
                     </span>
+                    </Link>
                     <span className="postDate">{format(post.createdAt)}</span>
 
                 </div>

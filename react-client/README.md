@@ -1,5 +1,5 @@
 # MERN Social Media Application
-Facebook-inspired social media application created using the MERN stack - MongoDB, Express, React, & Node.
+Facebook-inspired social media application created using the MERN stack - MongoDB, Express, React, & Node. 
 
 # Modules
 ## React Client
