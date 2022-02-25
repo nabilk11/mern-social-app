@@ -7,7 +7,7 @@ import axios from 'axios';
 export default function Post({ post }) {
 
     // state for likes
-    const [like, setLike] = useState(post.like);
+    const [like, setLike] = useState(post.likes.length);
     const [isLiked, setIsLiked] = useState(false);
     const [user, setUser] = useState({});
 // public folder url
@@ -33,7 +33,7 @@ useEffect(() => {
             <div className="postTop">
                 <div className="postTopLeft">
                     <img className='postProfileImg' 
-                    src={user.profilePicture} alt="" />
+                    src={user.profilePicture || PF+"blank_pf.jpeg"} alt="" />
                     <span className="postUsername">
                         {user.username}
                     </span>
@@ -46,7 +46,7 @@ useEffect(() => {
             </div>
             <div className="postCenter">
                 <span className="postText">{post?.desc}</span>
-                <img className="postImg" src={PF+post.photo} alt="" />
+                <img className="postImg" src={PF+post.img} alt="" />
             </div>
             <div className="postBottom">
                 <div className="postBottomLeft">
