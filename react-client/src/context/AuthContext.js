@@ -4,7 +4,16 @@ import AuthReducer from "./AuthReducer";
 
 
 const INTIAL_STATE = {
-    user: null,
+    user: {
+        _id: "6216109851f568608dd6d761",
+        username: "nabil",
+        email: "nk@nk.com",
+        profilePicture: "drake_pf.jpeg",
+        coverPicture: "post/8.jpeg",
+        isAdmin: false,
+        followers: [],
+        followings: [],
+    },
     isFetching: false,
     error: false,
 }

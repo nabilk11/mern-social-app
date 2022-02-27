@@ -10,7 +10,7 @@ export default function Login() {
     const email = useRef()
     const password = useRef()
 // useContext hook for auth
-    const { isFetching, erro, dispatch } = useContext(AuthContext)    
+    const { isFetching, error, dispatch } = useContext(AuthContext)    
 
 const handleLogin = (e) => {
     e.preventDefault()

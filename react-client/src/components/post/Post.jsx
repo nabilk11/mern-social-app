@@ -36,7 +36,7 @@ useEffect(() => {
                 <div className="postTopLeft">
                     <Link to={`/profile/${user.username}`} >
                     <img className='postProfileImg' 
-                    src={user.profilePicture || PF+"blank_pf.jpeg"} alt="" />
+                    src={user.profilePicture ? PF+user.profilePicture : PF+"blank_pf.jpeg"} alt="" />
                     </Link>
                     <Link to={`/profile/${user.username}`} style={{textDecoration: 'none', color: 'black' }}>
                     <span className="postUsername">

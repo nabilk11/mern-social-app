@@ -36,7 +36,7 @@ export default function Profile() {
             src={user.coverPicture || `${PF}post/8.jpeg`}
             alt="" />
             <img className="profileUserImg" 
-            src={user.profilePicture || `${PF}blank_pf.jpeg`}
+            src={user.profilePicture ? PF+user.profilePicture : PF+"blank_pf.jpeg"}
             alt="" />
             </div>
             <div className="profileInfo">
