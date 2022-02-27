@@ -32,9 +32,13 @@ const handleLogin = (e) => {
                     className="loginInput" ref={email} required />
                     <input type="password" placeholder="Password" 
                     className="loginInput" ref={password} required />
-                    <button className="loginButton">{isFetching ? <CircularProgress color='white' size={"36px"}/> : "Login"}</button>
+                    <button className="loginButton">
+                        {isFetching ? <CircularProgress 
+                        color='white' size={"34px"} /> 
+                        : "Login"}
+                        </button>
                     <span className="loginForgot">Forgot Password?</span>
-                    <button className="loginRegisterButton">{isFetching ? <CircularProgress color='white' size={"36px"}/> : "Create an Account"}</button>
+                    <button className="loginRegisterButton">{isFetching ? <CircularProgress color='white' size={"34px"}/> : "Create an Account"}</button>
                 </form>
 
             </div>
