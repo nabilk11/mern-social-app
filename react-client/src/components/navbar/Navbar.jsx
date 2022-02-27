@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import './navbar.css';
 import { Chat, Notifications, Person, Search } from '@material-ui/icons';
+import { AuthContext } from '../../context/AuthContext';
 
 export default function Navbar() {
+
+  const { user } = useContext(AuthContext)
+  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+
   return (
     <div className='navbarContainer'>
         <div className="navbarLeft">
@@ -38,7 +43,9 @@ export default function Navbar() {
                   <span className="navbarIconBadge">1</span> 
                 </div>
             </div>
-            <img className='navbarImg' src="/assets/rihanna_pf.jpeg" alt="" />
+            <Link to={`/profile/${user.username}`} >
+            <img className='navbarImg' src={user.profilePicture ? PF+user.profilePicture : PF+"blank_pf.jpeg"} alt="" />
+            </Link>
         </div>
     </div>
   )

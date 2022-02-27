@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import './register.css';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 export default function Register() {
 // useRef hook to prevent rerendering
@@ -49,7 +49,7 @@ if (passwordConfirm.current.value !== password.current.value) {
                     <input placeholder="Password" className="loginInput" ref={password} minLength={6} type="password" required />
                     <input placeholder="Confirm Password" className="loginInput" ref={passwordConfirm} minLength={6} type="password" required />
                     <button className="loginButton" type='submit' >Sign Up</button>
-                    <button className="loginRegisterButton">Login to Existing Account</button>
+                    <Link to="/login" > <button className="loginRegisterButton">Login to Existing Account</button></Link>
                 </form>
 
             </div>
