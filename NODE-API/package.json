@@ -4,7 +4,7 @@
   "description": "Rest API for MERN Stack social media application",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon server.js --ignore client"
   },
   "author": "nabil khan",
   "license": "ISC",

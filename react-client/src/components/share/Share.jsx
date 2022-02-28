@@ -11,7 +11,7 @@ const PF = process.env.REACT_APP_PUBLIC_FOLDER;
 
     // share form ref, state, handler
     const desc = useRef();
-    const [file, setFile] = useState();
+    const [file, setFile] = useState(null);
 
     const submitHandler = async (e) => {
         e.preventDefault()
@@ -21,7 +21,7 @@ const PF = process.env.REACT_APP_PUBLIC_FOLDER;
         }
         if (file) {
             const data = new FormData();
-            const fileName = Date.now() +file.name;
+            const fileName = Date.now() + file.name;
             data.append("file", file);
             data.append("name", fileName);
             newPost.img = fileName;
@@ -33,6 +33,8 @@ const PF = process.env.REACT_APP_PUBLIC_FOLDER;
         }
         try {
            await axios.post("/posts", newPost)
+           // refresh window after adding post
+           window.location.reload()
         } catch (err) {
            console.log(err) 
         }
